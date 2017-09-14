@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Ninja Tic Tac Toe</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Ninja Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-<div class="main-container">
-<header>
-	<div class="score-box">
-	<div class="score-container">
-		<p class="score-title">SCORE</p>
-		<p class= "p2-score score-name">Cat-Ninja:</p><p class=" num p2-score-num">0</p>
-		<p class= "p1-score score-name">Dog-Ninja:</p><p class=" num p1-score-num">0</p>
-	</div>
-	<div class="round-count">ROUND
-	<p class="round-num">1</p>
-</header>
-	<div id="win" class="win">
-		<img class="win-img" src="">
-	</div>
-		<div style="position: relative; z-index: -1;" class="restart-info">Click Image to Play Again</div>
-<div style="position: relative; z-index: 0;" id="game-board" class="game-board">
-	<div id="row1" class="row1">
-		<div id="box0-0" class="col1 col"></div>
-		<div id="box0-1" class="col2 col"></div>
-		<div id="box0-2" class="col3 col"></div>
-	</div>
-	<div id="row2" class="row2">
-		<div id="box1-0" class="col4 col"></div>
-		<div id="box1-1" class="col5 col"></div>
-	<div id="box1-2" class="col6 col"></div>
-	</div>
-	<div id="row3" class="row3">
-		<div id="box2-0" class="col7 col"></div>
-		<div id="box2-1" class="col8 col"></div>
-		<div id="box2-2" class="col9 col"></div>
-	</div>
-</div><!--- end .game-board-->
-</div> <!-- end main container -->
-<script type="text/javascript" src="main.js"></script>
+    <div class="main-container">
+        <header>
+            <div class="score-container">
+                <p class="score-title">SCORE</p>
+                <p class="p2-score score-name">Cat-Ninja:</p>
+                <p class=" num p2-score-num">0</p>
+                <p class="p1-score score-name">Dog-Ninja:</p>
+                <p class=" num p1-score-num">0</p>
+            </div>
+            <div class="round-count">ROUND
+                <p class="round-num">1</p>
+            </div>
+        </header>
+        <div style="position: relative; z-index: -1;" id="win" class="win">
+            <img class="win-img" src="">
+        </div>
+        <div style="position: relative; z-index: -1;" class="restart-info">Click Image to Play Again</div>
+        <div style="position: relative; z-index: 0;" id="game-board" class="game-board">
+            <div id="row1" class="row1">
+                <div id="box0-0" class="col1 col"></div>
+                <div id="box0-1" class="col2 col"></div>
+                <div id="box0-2" class="col3 col"></div>
+            </div>
+            <div id="row2" class="row2">
+                <div id="box1-0" class="col4 col"></div>
+                <div id="box1-1" class="col5 col"></div>
+                <div id="box1-2" class="col6 col"></div>
+            </div>
+            <div id="row3" class="row3">
+                <div id="box2-0" class="col7 col"></div>
+                <div id="box2-1" class="col8 col"></div>
+                <div id="box2-2" class="col9 col"></div>
+            </div>
+        </div>
+        <!--- end .game-board-->
+    </div>
+    <!-- end main container -->
+    <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
