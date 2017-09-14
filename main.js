@@ -35,6 +35,7 @@ var getCol = function() {
             p2ColWin(); // if p2 gets 3 in one column
             p1DiagWin(); // if p1 has a diagonal win
             p2DiagWin(); // if p2 has a diagonal win
+            noWin(); // tie scenario
 
 
         })
@@ -205,22 +206,24 @@ var p2DiagWin = function() {
         p2Diag1 = p2Diag1 + p2Board[s][s];
     }
 
-    for (var t = 0; t <= 2; t++) {
-        p2Diag2 = p2Diag2 + p2Board[t][t];
+    for (var r = 0, x = 2; r <= 2, x >= 0; r++, x--) {
+        p2Diag2 = p2Diag2 + p2Board[r][x]
     }
 
     if (p2Diag1 === 3) {
-        p2CatLaughWin();
+        handNinjaWin();
         changeP2Score();
     } else if (p2Diag2 === 3) {
-        p2CatLaughWin();
+        handNinjaWin();
         changeP2Score();
     }
 }
 
 
 var noWin = function(){
-
+    if (clickNumber === 9){
+        handNinjaWin();
+    }
 }
 // functions that display hidden win div for each win scenario
 
@@ -232,6 +235,7 @@ var gameBoard = document.querySelector(".game-board")// find game board div to c
 var newWinnerDiv = document.querySelector("#win") //find win div with id that never changes
 var p1CurrScore = document.querySelector(".p1-score-num") //location of current p1 score on score board
 var p2CurrScore = document.querySelector(".p2-score-num") //location of current p2 score on score board
+var roundNum = document.querySelector(".round-num")
 
 
 
@@ -254,9 +258,13 @@ var changeP2Score = function() {
      p2CurrScore.innerHTML = p2NewNum.toString();
 }
 
-//function to count the number of rounds//////////////////////////////////////////////////////////////////////
+//function to count the number of rounds
 var roundCounter = function(){
-      }
+     var newNum = Number(roundNum.textContent) + 1; //add one to player score
+     roundNum.innerHTML = newNum.toString();
+}
+
+
 
 
 // reset player board
@@ -267,6 +275,8 @@ var resetPlayerBoard = function() {
         winnerDiv.style.zIndez = "-1"
         restartDiv.style.zIndex = "-1";
         gameBoard.style.zIndex = "0";
+        clickNumber = 0;
+        roundCounter();
 
         //loop through ninja classes and remove each added ninja elem
         for (var e = 0; e < 9; e++) {
