@@ -1,10 +1,12 @@
 
 var clickNumber = 0;// used to determin player 1 or 2 and tie function
-var boxPos = 0;
-var rowPos = 0;
+var boxPos = 0; //second position in the board array updated with each click event
+var rowPos = 0; //first position in the board array updated with each click event
 
-var p1Board = new Array();
-var p2Board = new Array();
+var p1Board = new Array(); // 2d array that represents p1 game board, records all of p1 clicks positions
+var p2Board = new Array(); //2d array that represents p2 gameboard, records all of p2 click positions
+var kick = new Audio("Recording_2.mp3"); //kick audio that will play with player two click
+var yell = new Audio("hiya.mp3"); // ninja yall that will play with player one click
 
 // getCol(); takes each click and adds a 1 to the same click position on each players board,
 // then getCol(); adds the rows columns and diagonals and when they reach 3 a winner is declared
@@ -20,11 +22,13 @@ var getCol = function() {
         boxPos = Number(event.target.id.substr(5, 1));
         rowPos = Number(event.target.id.substr(3, 1));
         p2Board[rowPos][boxPos] = 1;
+        kick.play(); // audio for each click
       } else {
         event.target.classList.add("ninja-dog");
         boxPos = Number(event.target.id.substr(5, 1));
         rowPos = Number(event.target.id.substr(3, 1));
         p1Board[rowPos][boxPos] = 1;
+        yell.play();
       }
 
       p1RowWin(); // if p1 gets 3 across
