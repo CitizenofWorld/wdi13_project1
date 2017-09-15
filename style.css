@@ -7,6 +7,10 @@ div.col:hover {
     background-color: black;
 }
 
+#win {
+    transition-timing-function: ease-in-out;
+}
+
 .main-container {
     background-image: url(images/dojoimg.jpg);
     background-repeat: no-repeat;
@@ -94,6 +98,7 @@ div.col:hover {
     background-color: rgba(230, 230, 230, 0.7);
     border-radius: 20px;
     z-index: 0;
+    transition-timing-function: ease-in;
 }
 
 .player-1-win {
