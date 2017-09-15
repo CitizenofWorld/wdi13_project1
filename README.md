@@ -8,7 +8,7 @@ The game features include:
  * A counter that will count each round the players play
  * A score box that will keep track of the payers wins.
  * A 3 X 3 gameboard
- * with each click an audio will play
+ * With each click an audio will play
 
 
 ### Objective:
